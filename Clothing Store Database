@@ -1,0 +1,42 @@
+--Create a clothing store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, section TEXT, price INTEGER, quantity INTEGER, size TEXT); 
+
+INSERT INTO store VALUES (1, "Red Shirt", "womens", 10, 20, "S/M/L"); 
+INSERT INTO store VALUES (2, "Blue Pants", "womens", 20, 25, "S/M/L"); 
+INSERT INTO store Values (3, "Black Dress", "womens", 50, 14, "S/M/L"); 
+INSERT INTO store VALUES (4, "White Skirt", "womens", 30, 17, "S/M/L");
+INSERT INTO store VALUES (5, "Pink Shirt", "girls", 5, 8, "S/L"); 
+INSERT INTO store VALUES (6, "White Pants", "girls", 10, 12, "S/L"); 
+INSERT INTO store VALUES (7, "Purple Dress", "girls", 30, 7, "S/M");
+INSERT INTO store VALUES (8, "Yellow Skirt", "girls", 15, 4, "M/L");
+INSERT INTO store VALUES (9, "White Shirt", "mens", 8, 18, "S/M/L"); 
+INSERT INTO store VALUES (10, "Khaki Pants", "mens", 16, 30, "M/L"); 
+INSERT INTO store VALUES (11, "Penstripe Suit", "mens", 50, 21, "S/M/L"); 
+INSERT INTO store VALUES (12, "Orange Shirt", "boys", 5, 11, "S/L"); 
+INSERT INTO store VALUES (13, "Brown Pants", "boys", 10, 19, "S/M"); 
+INSERT INTO store VALUES (14, "Black Suit", "boys", 35, 6, "S/M/L"); 
+INSERT INTO store VALUES (15, "Blue Shorts", "boys", 15, 3, "S/M/L"); 
+
+--display the database ordered by price.
+SELECT * FROM store ORDER BY price; 
+
+--what is the avg price of items in the girls section? 
+SELECT AVG(price)
+FROM store
+where section='girls'; 
+
+--what are the 5 items with the highest quantity in stock? 
+SELECT item, price, quantity
+FROM store
+order by quantity desc
+limit 5; 
+
+
+
+
+
+
+
+
+
